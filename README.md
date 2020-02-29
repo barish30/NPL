@@ -1,4 +1,3 @@
-<html>
 # Superbowl 2017
 
 
@@ -41,25 +40,17 @@ El fichero es en realidad una tabla con cuatro columnas separadas por tabuladore
 
 La siguiente celda te permite abrir el fichero para lectura y cargar los mensajes en la lista `tweets`. Modifica el código para que la ruta apunte a la copia local de tu fichero.
 
-</html>
 
-'''python
 
 !gunzip ../data/2017-twitter-messages.tsv.gz
 !ls -l ../data
 
-'''
-
-'''python
 
 tweets = []
 RUTA = '../data/2017-twitter-messages.tsv'
 for line in open(RUTA).readlines():
     tweets.append(line.split('\t'))
 
-'''
-
-'''
 # en Windows, asegúrate de que abres el fichero de texto forzando la codificación para que sea Unicode
 import codecs
 tweets = []
@@ -69,15 +60,12 @@ with codecs.open(RUTA, "r", "utf-8") as f:
     for line in f.readlines():
         tweets.append(line.split("\t"))
 
-'''
-
-'''
 ultimo_tweet = tweets[-1]
 print('id =>', ultimo_tweet[0])
 print('fecha =>', ultimo_tweet[1])
 print('autor =>', ultimo_tweet[2])
 print('texto =>', ultimo_tweet[3])
 
-'''
+
 
 
